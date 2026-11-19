@@ -66,3 +66,30 @@ Requirements for every published page:
 ## Post-launch measurement
 
 Record weekly: Search Console impressions, clicks, query/page positions, organic landing pages and real enquiries. Compare 28-day periods and avoid overinterpreting the first few weeks of a new domain.
+
+## Evidence from 19 November 2026
+
+### Live-site baseline (OpenSEO crawl, prior to publication)
+- HTTP 200, indexable homepage, 2,477 words, one H1, 11 images and no missing alt text.
+- Lighthouse mobile performance 84, desktop performance 97, SEO 92, accessibility 87.
+- Mobile LCP in synthetic test ~3.61 sec. Main flagged opportunities: oversized hero image (original 1000×1333 JPEG ~266 KB), render-blocking Google Fonts, missing main landmark, review heading hierarchy, low-contrast labels and malformed robots.txt on production (HTML served at the path). Source fixes have been made in the draft except full image compression and font optimisations.
+
+### Research-supported keyword priorities (approximate UK monthly volume)
+- automatic driving lessons Bournemouth: ~210, KD 1 (tool estimate)
+- automatic driving lessons Poole: ~90, KD 0
+- female driving instructor Bournemouth: ~50, KD 0
+- female driving instructor Poole: ~30, KD 0
+- Other terms must be checked for useful demand before making thin pages. Search volume and difficulty estimates are not guaranteed traffic or Google rankings.
+
+### Local-business profile discrepancy
+- The existing Google Business Profile (CID 3573782846472705415) points to `www.bournemouthautomaticdrivinglessons.co.uk`, not the new domain.
+- Public Google profile data currently shows 6 five-star reviews; prior homepage claimed 37. Real reviews may exist in other sources. Confirm before publishing any hard numbers. Self-serving `aggregateRating` structured data has been removed from the draft.
+- Current Google profile hours differ from those printed on the website. Confirm real lesson hours with Gillian.
+- Avoid inventing a precise business location; the unverified coordinates/address were removed from draft JSON-LD.
+
+### Preview and go-live gate
+- Preview has been crawled successfully: homepage plus three initial service pages returned 200, linked internally and canonicalised to the future production URLs. The `noindex` preview header is intentional on Cloudflare Pages.
+- Additional female-instructor page is being added to this draft and should be preview-audited before publication.
+- PR #1 is **draft**. No merge to main or change in production is permitted without an explicit approval.
+- GitHub issue #2 contains Cloudflare / Search Console / Business Profile checklists.
+- No recurring paid rank checks have been enabled: two local mobile rank trackers (Poole and Bournemouth) are set to manual.
